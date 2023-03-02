@@ -8,7 +8,80 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div>我是測驗</div>
+  <div class="container">
+    <div class="nav">
+      <ul class="nav-list">
+        <li class="nav-item page-active">PRODUCT</li>
+        <li class="nav-item">VIDEO</li>
+        <li class="nav-item">CATALOG</li>
+        <li class="nav-item">EXPLORE MORE</li>
+      </ul>
+    </div>
+    <div class="product-info">
+      <div class="product-demo">
+        <div class="product-img">
+          <img src="./image-test.png" alt="test-image">
+        </div>
+        <div class="photo-tab">
+          <div class="tab-item tab-active">
+            <div>
+              <img src="./photo.svg" alt="photo">
+            </div>
+            <p>PHOTO</p>
+          </div>
+          <div class="tab-item">
+            <div>
+              <img src="./eclipes15.svg" alt="eclipes">
+            </div>
+            <p>360</p>
+          </div>
+          <div class="tab-item">
+            <div>
+              <img src="./3D.svg" alt="3d">
+            </div>
+            <p>3D</p>
+          </div>
+        </div>
+      </div>
+      <div class="product-introduction">
+        <div class="product-code">產品型號12345678</div>
+        <div class="product-title">產品名稱 TMA-2 STUDIO</div>
+        <div class="product-description">產品介紹 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+        literature from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text.
+        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular
+        belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making
+        it over 2000 years old. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+        from 45 BC, making it over 2000 years old.Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+        roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.Contrary to popular belief,
+        Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over
+        2000 years old.</div>
+      </div>
+    </div>
+  </div>
+    <script>
+      const navbtn = document.querySelectorAll('.nav-item');
+      navbtn.forEach(item=> item.addEventListener("click", function (event) {
+          //先前有選到的按鈕要消掉狀態
+        const activeButton = document.querySelector('.page-active')
+        if (activeButton) {
+          activeButton.classList.remove('page-active')
+        }
+         event.target.classList.add("page-active");
+      }      
+      ))
+      const tabBtn = document.querySelectorAll('.tab-item');
+      tabBtn.forEach(item => item.addEventListener("click", function (event) {
+          //先前有選到的按鈕要消掉狀態
+          const activeButton = document.querySelector('.tab-active')
+          if (activeButton) {
+            activeButton.classList.remove('tab-active')
+          }
+          event.stopPropagation()
+          event.target.classList.add("tab-active");
+        }
+        ))
+     
+    </script>
   
 </body>
 </html>
