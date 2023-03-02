@@ -188,7 +188,7 @@ h6 {
 }
 .product-info {
   display: grid;
-  grid-template-columns: repeat(2,minmax(870px,1fr));
+  grid-template-columns: repeat(2,minmax(1fr,870px));
   grid-template-rows: 900px;
 }
 
